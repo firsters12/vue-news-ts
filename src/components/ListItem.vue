@@ -52,8 +52,8 @@ export default Vue.extend({
     },
   },
   computed: {
-    ListItems(): any {
-      return this.$store.getters.fetchedList;
+    ListItems() {
+      return this.$store.getters.fetchedNews;
     },
   },
 });
