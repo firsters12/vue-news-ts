@@ -43,7 +43,7 @@ function fetchItem(id: any) {
   return axios.get(url);
 }
 
-function fetchList(type) {
+function fetchList(type: NewsItem[]) {
   const url = `https://api.hnpwa.com/v0/${type}/1.json`;
   return axios.get(url);
 }

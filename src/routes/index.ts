@@ -38,12 +38,13 @@ export default new VueRouter({
       path: "/ask",
       name: "ask",
       component: createListView("AskView"),
-      beforeEnter(routeTo, routeFrom, next) {
+      beforeEnter(routeTo: Route, routeFrom: Route, next: NavigationGuardNext<Vue>) {
         bus.$emit("on:progress");
-        store
-          .dispatch("FETCH_LIST", routeTo.name)
-          .then(() => next())
-          .catch(() => new Error("failed to fetch news items"));
+        next();
+        // store
+        //   .dispatch("FETCH_LIST", routeTo.name)
+        //   .then(() => next())
+        //   .catch(() => new Error("failed to fetch news items"));
       },
     },
     {
